@@ -2,6 +2,26 @@
 
 This directory is the entry point for project documentation. Use this README as the map for where each artifact belongs. Individual documentation files may be empty until their topic is ready to be written.
 
+## MVP Spec Package
+
+The current active product specification package is **MVP-001: Tea Shelf / Чайная Полка**.
+
+Primary entry points:
+
+- [MVP PRD](spec/product-requirements/active/PRD-MVP-001-tea-shelf.md)
+- [MVP Functional Specification](spec/product-requirements/active/MVP-001-functional-specification.md)
+- [Tea Shelf Feature Spec](spec/feature-specs/active/FEAT-MVP-001-tea-shelf.md)
+- [Teaware Shelf Feature Spec](spec/feature-specs/active/FEAT-MVP-002-teaware-shelf.md)
+- [Brew Timer Feature Spec](spec/feature-specs/active/FEAT-MVP-003-brew-timer.md)
+- [Session History Feature Spec](spec/feature-specs/active/FEAT-MVP-004-session-history.md)
+- [Core Entity Definitions](spec/system-specs/domain-models/MVP-core-entities.md)
+- [MVP Information Architecture](spec/system-specs/domain-models/MVP-information-architecture.md)
+- [Acceptance Criteria](spec/user-stories/acceptance-criteria/MVP-001-acceptance-criteria.md)
+- [MVP Test Plan](qa/test-plans/MVP-001-test-plan.md)
+- [Risk Register](team/risks/MVP-risk-register.md)
+- [Spec Approval Workflow](team/governance/spec-approval-workflow.md)
+- [Release Readiness](operations/release-management/MVP-release-readiness.md)
+
 ## Documentation Structure
 
 ```text
