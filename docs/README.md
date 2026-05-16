@@ -19,6 +19,7 @@ Primary entry points:
 - [Acceptance Criteria](spec/user-stories/acceptance-criteria/MVP-001-acceptance-criteria.md)
 - [Requirement Matrix](spec/requirements-traceability/requirement-matrix.md)
 - [Development Handoff](spec/technical-specs/implementation-plans/MVP-001-development-handoff.md)
+- [MVP Tech Radar](research/technology/MVP-tech-radar.md)
 - [MVP Screen Specifications](design/wireframes/MVP-screen-specifications.md)
 - [MVP Design System](design/design-system/MVP-design-system.md)
 - [Local Service Contracts](api/contracts/service-contracts/MVP-local-service-contracts.md)

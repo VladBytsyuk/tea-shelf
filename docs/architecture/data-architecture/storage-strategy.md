@@ -7,6 +7,8 @@ Version: MVP-001
 
 Tea Shelf MVP is local-first and single-user until authentication and cloud sync are approved as MVP+ or later. The implementation stack must define a browser/local persistence strategy before coding starts.
 
+The selected MVP persistence default is IndexedDB through Dexie, accessed only through local services or repositories. UI components must not call browser storage directly.
+
 ## Minimum Requirements
 
 - Persist Tea, Teaware, BrewSession, SessionNote, and session sequence data for normal app use.
@@ -32,3 +34,12 @@ Tea Shelf MVP is local-first and single-user until authentication and cloud sync
 - Release docs must disclose local data durability limits.
 - QA must validate normal-use persistence and backup/recovery behavior once the implementation strategy is selected.
 - Storage unavailable, quota exceeded, or incompatible local data must surface a recoverable error instead of trapping users in a broken app state.
+
+## Implementation Default
+
+- Use IndexedDB through Dexie for Tea, Teaware, BrewSession, SessionNote or inline notes, and session sequence data.
+- Store a schema version from the first release and keep migration hooks explicit.
+- Keep export/import format versioned with `schemaVersion` and `exportedAt`.
+- Validate the complete import payload before any replacement.
+- Replace local data only after explicit user confirmation.
+- Preserve existing data untouched when import validation fails.

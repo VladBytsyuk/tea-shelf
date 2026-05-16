@@ -7,6 +7,8 @@ Version: MVP-001
 
 This document is the index and shared rule set for Tea Shelf MVP components. Each component has its own canonical specification file under this directory.
 
+The implementation target for these component specifications is `design-system-impl`. MVP feature screens must compose shared primitives from that library instead of duplicating component behavior locally.
+
 Components must use tokens from:
 
 - `docs/design/design-system/color-system.md`
@@ -14,6 +16,14 @@ Components must use tokens from:
 - `docs/design/design-system/tokens/MVP-token-requirements.md`
 
 ## Global Component Rules
+
+### Library Boundary
+
+- `design-system-impl` owns shared component contracts, token mappings, variants, dimensions, states, and accessibility behavior.
+- MVP web uses React components and CSS token exports from `design-system-impl`.
+- Future clients must preserve these contracts through the same library or a platform-specific adapter.
+- Feature screens may compose shared primitives and add screen layout, but must not fork shared button, field, dialog, navigation, timer-control, or validation behavior.
+- External heavy UI kits must not replace this component library in MVP.
 
 ### Box Model
 

@@ -5,7 +5,9 @@ Version: MVP-001
 
 ## Purpose
 
-Tokens define the smallest reusable visual decisions for Tea Shelf MVP. Implementation must map these tokens to the selected frontend stack before component work starts.
+Tokens define the smallest reusable visual decisions for Tea Shelf MVP. Implementation must map these tokens into `design-system-impl` before component work starts.
+
+Every Tea Shelf client must consume token values through `design-system-impl` or a platform-specific adapter that preserves the same semantic token names.
 
 ## Color Tokens
 

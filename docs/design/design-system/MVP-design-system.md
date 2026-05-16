@@ -8,6 +8,8 @@ Owner: UI/UX Designer
 
 This design system defines the visual language, interaction rules, component behavior, and accessibility requirements for Tea Shelf / Чайная Полка MVP.
 
+The implementation library for these decisions is `design-system-impl`. Every Tea Shelf client must consume shared tokens, primitives, and component behavior from that library instead of reimplementing common UI behavior per screen.
+
 The system exists to make the product feel calm, focused, and practical for Chinese tea inventory, teaware context, guided multi-steep brewing, and repeatable session memory. It is an implementation-ready documentation source, not a marketing style guide.
 
 ## Product-Aligned Design Principles
@@ -36,6 +38,18 @@ The system exists to make the product feel calm, focused, and practical for Chin
 - Components and exact component layouts: `docs/design/design-system/components/MVP-component-requirements.md`
 - Accessibility: `docs/design/design-system/accessibility.md`
 - Screen behavior: `docs/design/wireframes/MVP-screen-specifications.md`
+
+## Implementation Library
+
+`design-system-impl` is the internal shared design-system implementation library.
+
+MVP expectations:
+
+- Initial target is React/web components and CSS token exports.
+- Future clients must use the same token names, component contracts, accessibility behavior, and interaction rules through this library or a platform-specific adapter.
+- Feature screens compose shared primitives from the library and may add screen-specific layout only when the behavior is not shared.
+- Shared controls such as buttons, icon buttons, fields, validation messages, badges, alerts, dialogs, navigation, and timer controls must not be forked locally.
+- Third-party heavy UI kits are not the design-system implementation for MVP.
 
 ## Layout System
 
@@ -98,6 +112,7 @@ The system exists to make the product feel calm, focused, and practical for Chin
 ## Implementation Readiness Checklist
 
 - Use exact color, spacing, typography, radius, border, shadow, and state tokens.
+- Implement and consume those tokens through `design-system-impl`.
 - Use `docs/design/design-system/components/MVP-component-requirements.md` as the source of truth for component anatomy, dimensions, spacing, variants, states, and accessibility.
 - Use semantic component variants instead of one-off styling.
 - Check every MVP screen at 360px, 768px, and 1024px.

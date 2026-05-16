@@ -5,12 +5,13 @@ Version: MVP-001
 
 ## Purpose
 
-Define technical requirements without selecting the implementation stack. This document supports later architecture and implementation planning after specification approval.
+Define technical requirements for the selected MVP implementation direction. The stack decisions are recorded in [MVP Tech Radar](../../../research/technology/MVP-tech-radar.md).
 
 ## Platform
 
 - Responsive web application.
 - Mobile, tablet, and desktop viewport support.
+- Shared design-system implementation library for all Tea Shelf clients.
 - No native iOS or Android implementation in MVP.
 
 ## Data Requirements
@@ -53,11 +54,21 @@ Remote telemetry is not required in MVP and must not collect private notes by de
 - MVP architecture must leave room for future authentication and cloud sync.
 - MVP data concepts must not depend on AI, content, commerce, or social features.
 
-## Open Technical Decisions
+## Resolved Technical Decisions
 
-- Frontend framework.
-- Persistence strategy.
-- Hosting and deployment target.
-- Test framework.
-- Observability approach.
-- Export/import or local backup mechanism.
+- Frontend framework: React + TypeScript + Vite.
+- Shared UI implementation: `design-system-impl` internal library.
+- Persistence strategy: IndexedDB through Dexie behind local services/repositories.
+- Test framework: Vitest, Testing Library, Playwright, and axe-based accessibility checks.
+- Deployment topology: static web app hosting with HTTPS, previews, deploy history, and rollback.
+- Observability approach: CI evidence, release smoke evidence, and issue intake by default; remote telemetry held unless separately approved.
+- Export/import backup: required before release unless PM explicitly accepts local data-loss risk.
+
+## Remaining Implementation Decisions
+
+- Exact package manager and lockfile.
+- Exact workspace/package layout for `design-system-impl`.
+- Exact static hosting provider.
+- Provider-specific deploy, preview, and rollback commands.
+- Exact export/import JSON shape and validation implementation.
+- Exact CI script names after the app scaffold exists.

@@ -10,3 +10,5 @@ Version: MVP-001
 - Avoid speculative AI, sync, content, commerce, social, or native mobile abstractions.
 - Write deterministic tests for timer state, archive/restore, stock validation, and session snapshots.
 - Preserve accessibility requirements in component implementation.
+- Implement shared UI primitives in `design-system-impl` and consume them from every client.
+- Do not duplicate shared button, field, dialog, navigation, timer-control, validation, or token behavior inside feature screens.
