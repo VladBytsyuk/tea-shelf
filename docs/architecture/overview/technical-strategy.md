@@ -1,6 +1,6 @@
 # Technical Strategy
 
-Status: Ready for Implementation Planning
+Status: Approved for Implementation
 Version: MVP-001
 
 ## Strategy
@@ -36,12 +36,11 @@ The detailed decision artifact is [MVP Tech Radar](../../research/technology/MVP
 - Persistence: IndexedDB through Dexie behind local repositories.
 - State: React local state and custom hooks by default; Zustand only for justified cross-route state.
 - Testing: Vitest, Testing Library, Playwright, and axe-based accessibility checks.
-- Deployment: static hosting with HTTPS, PR previews, immutable deploy history, and rollback.
+- Package manager: pnpm with a committed `pnpm-lock.yaml`.
+- Deployment: Vercel static hosting with HTTPS, PR previews, immutable deploy history, and rollback.
 
-## Explicit Non-Decisions and Holds
+## Explicit Holds
 
-- No exact hosting provider is selected yet.
-- No package manager is selected yet.
 - No authentication provider is selected for MVP.
 - No AI provider is selected for MVP.
 - No backend API, cloud database, sync worker, remote telemetry, commerce, social, or native mobile stack is selected for MVP.

@@ -1,6 +1,6 @@
 # MVP Tech Radar
 
-Status: Ready for Implementation Planning
+Status: Approved for Implementation
 Version: MVP-001
 Owner: Tech Lead
 Audience: Engineering, QA, DevOps, Product
@@ -51,7 +51,7 @@ Implementation defaults:
 - App type: static SPA.
 - Build output: Vite production build artifact.
 - Browser target: modern browsers supported by the selected Vite defaults unless implementation planning explicitly changes it.
-- Package manager: choose one during scaffold creation and lock it in with a lockfile.
+- Package manager: pnpm with a committed `pnpm-lock.yaml`.
 
 ### design-system-impl
 
@@ -131,7 +131,7 @@ Deploy the MVP as a static web app on a host that supports:
 - Static asset caching.
 - Production deploy from main or a tagged release after required gates pass.
 
-Good-fit hosts include Vercel, Netlify, and Cloudflare Pages. The final provider should be selected during scaffold/deployment setup based on repository ownership and account availability.
+Use Vercel for MVP static hosting. Vercel satisfies the required HTTPS, preview deployment, deploy history, and rollback expectations with minimal operational setup for a Vite SPA.
 
 ## Trial
 

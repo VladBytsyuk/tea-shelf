@@ -1,16 +1,25 @@
 # MVP Pipeline Requirements
 
-Status: Draft  
+Status: Approved for Implementation
 Version: MVP-001
 
 ## Required Checks
 
-- Install/build check for the selected React + TypeScript + Vite stack.
+- Install/build check for the selected React + TypeScript + Vite stack using pnpm.
 - Unit and component tests with Vitest and Testing Library for core behavior.
 - End-to-end smoke checks with Playwright for first-use and repeat-session flows.
 - Accessibility check with axe where practical plus documented manual accessibility evidence.
 - Responsive validation evidence.
 - Dependency/security check if package tooling supports it.
+
+## Required Commands
+
+- Install: `pnpm install --frozen-lockfile`.
+- Lint: `pnpm lint`.
+- Typecheck: `pnpm typecheck`.
+- Unit/component tests: `pnpm test`.
+- Production build: `pnpm build`.
+- Release smoke/E2E: `pnpm test:e2e` and `pnpm release:smoke` where configured by the scaffold.
 
 ## Required MVP Scenarios
 
@@ -29,5 +38,6 @@ Version: MVP-001
 ## Artifacts
 
 - Record release version or commit.
-- Record build output location.
+- Record Vite build output location.
+- Record Vercel preview or production deployment URL.
 - Record validation evidence.

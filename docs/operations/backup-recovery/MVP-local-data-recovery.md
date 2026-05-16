@@ -1,6 +1,6 @@
 # MVP Local Data Recovery
 
-Status: Draft  
+Status: Approved for Implementation
 Version: MVP-001
 
 ## Scope
@@ -9,7 +9,7 @@ MVP is local-first and has no cloud recovery. Users must not be promised cloud b
 
 ## Requirements
 
-- Implementation planning must define local persistence and data versioning.
+- Local persistence uses IndexedDB through Dexie with schema versioning from the first release.
 - Release readiness must validate normal-use persistence after reload.
 - Export/import or equivalent local backup guidance must be provided before release unless PM accepts data-loss risk.
 - Browser storage clearing risk must be documented.
@@ -24,6 +24,7 @@ MVP is local-first and has no cloud recovery. Users must not be promised cloud b
 ## Export / Import Requirements
 
 - Export must be local user-initiated file creation or an equivalent local backup mechanism.
+- Export must produce JSON containing `schemaVersion`, `exportedAt`, and the complete local Tea Shelf dataset.
 - Export must not send data to external services.
 - Import must validate version and required structure before changing local data.
 - Import must preserve existing local data if validation fails.

@@ -1,6 +1,6 @@
 # MVP Deploy Procedure
 
-Status: Draft  
+Status: Approved for Implementation
 Version: MVP-001
 
 ## Pre-Deploy
@@ -12,7 +12,9 @@ Version: MVP-001
 
 ## Deploy
 
-Deployment commands depend on the selected stack and hosting target and must be filled during implementation planning.
+- Deploy the Vite production build artifact to Vercel.
+- Use Vercel preview deployments for pull requests and production deployments from the approved release branch or tag.
+- Record the deployment URL and Vercel deployment identifier in release evidence.
 
 ## Post-Deploy Smoke Test
 
@@ -26,4 +28,5 @@ Deployment commands depend on the selected stack and hosting target and must be 
 
 ## Rollback
 
-Rollback procedure depends on hosting target and must be documented before release.
+- Roll back through Vercel deploy history to the last known-good deployment.
+- Record rollback trigger, owner, previous deployment identifier, and restored deployment URL.

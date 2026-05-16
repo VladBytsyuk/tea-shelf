@@ -1,6 +1,6 @@
 # Spec Approval Workflow
 
-Status: Draft  
+Status: Approved for Implementation
 Version: MVP-001
 
 ## Workflow States
@@ -26,6 +26,13 @@ Version: MVP-001
 - Requirement matrix maps FR/NFR IDs to acceptance and tests.
 - Release readiness, quality gates, storage strategy, and local data privacy are reviewed.
 
+## Approval Ownership
+
+- Role owners approve their owned specification areas.
+- Product Manager consolidates approval status and resolves scope conflicts.
+- Product Manager must not override unresolved QA, security, architecture, or DevOps blockers.
+- A spec is implementation-ready only when its role owner has no blocking findings.
+
 ## Change Control
 
 Any proposed change that adds AI, Knowledge Shelf, authentication, cloud sync, native mobile, monetization, marketplace, or social features to MVP must be rejected by default and escalated to PM for explicit approval.
@@ -34,4 +41,4 @@ Permanent deletion, remote telemetry, and external data export also require expl
 
 ## Implementation Rule
 
-No implementation begins from conversation context alone. Implementation tasks must cite approved docs.
+No implementation begins from conversation context alone. Implementation tasks must cite approved docs, requirement IDs, and acceptance criteria. Active MVP implementation must start only from specs marked `Approved for Implementation`.

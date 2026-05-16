@@ -1,6 +1,6 @@
 # MVP-001 Story Map
 
-Status: Draft  
+Status: Approved for Implementation
 Version: MVP-001
 
 ## Backbone

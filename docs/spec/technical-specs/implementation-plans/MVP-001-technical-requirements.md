@@ -1,6 +1,6 @@
 # MVP-001 Technical Requirements
 
-Status: Ready for Implementation Planning
+Status: Approved for Implementation
 Version: MVP-001
 
 ## Purpose
@@ -58,17 +58,18 @@ Remote telemetry is not required in MVP and must not collect private notes by de
 
 - Frontend framework: React + TypeScript + Vite.
 - Shared UI implementation: `design-system-impl` internal library.
+- Package manager: pnpm with a committed `pnpm-lock.yaml`.
+- Workspace layout: pnpm workspace with `apps/web` for the Vite React app and `packages/design-system-impl` for the internal UI package.
 - Persistence strategy: IndexedDB through Dexie behind local services/repositories.
 - Test framework: Vitest, Testing Library, Playwright, and axe-based accessibility checks.
-- Deployment topology: static web app hosting with HTTPS, previews, deploy history, and rollback.
+- Deployment topology: Vercel static web app hosting with HTTPS, previews, deploy history, and rollback.
 - Observability approach: CI evidence, release smoke evidence, and issue intake by default; remote telemetry held unless separately approved.
 - Export/import backup: required before release unless PM explicitly accepts local data-loss risk.
 
-## Remaining Implementation Decisions
+## Implementation Defaults
 
-- Exact package manager and lockfile.
-- Exact workspace/package layout for `design-system-impl`.
-- Exact static hosting provider.
-- Provider-specific deploy, preview, and rollback commands.
-- Exact export/import JSON shape and validation implementation.
-- Exact CI script names after the app scaffold exists.
+- Required scripts: `dev`, `lint`, `typecheck`, `test`, `test:e2e`, `build`, `preview`, and `release:smoke`.
+- CI command sequence: `pnpm install --frozen-lockfile`, `pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm build`, and `pnpm test:e2e` for release branches or release validation.
+- Build artifact: Vite production output from the selected app package.
+- Export file shape: JSON object containing `schemaVersion`, `exportedAt`, and the complete local Tea Shelf dataset.
+- Import behavior: validate the entire file before replacement, reject malformed or incompatible imports without overwriting local data, show a private-data warning, and require explicit replacement confirmation.

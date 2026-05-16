@@ -1,6 +1,6 @@
 # PRD-MVP-001: Tea Shelf MVP
 
-Status: Ready for Implementation Planning
+Status: Approved for Implementation
 Version: MVP-001
 Owner: Product Manager
 Audience: Product, design, architecture, engineering, QA, DevOps

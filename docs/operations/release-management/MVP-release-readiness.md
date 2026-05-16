@@ -1,6 +1,6 @@
 # MVP Release Readiness
 
-Status: Ready for Implementation Planning
+Status: Approved for Implementation
 Version: MVP-001
 
 ## Required Before Implementation
@@ -46,4 +46,4 @@ Release evidence must include:
 
 ## Rollback and Support Notes
 
-Detailed deployment rollback depends on the selected technical stack and must be documented during implementation planning.
+Rollback uses Vercel deploy history to restore the previous known-good static deployment. The release evidence must record the rollback owner, trigger, source deployment identifier, and restored deployment identifier.

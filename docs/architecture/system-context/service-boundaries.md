@@ -1,6 +1,6 @@
 # Service Boundaries
 
-Status: Draft  
+Status: Approved for Implementation
 Version: MVP-001
 
 ## MVP Boundary

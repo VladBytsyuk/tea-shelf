@@ -1,21 +1,19 @@
 # Deployment Topology
 
-Status: Draft  
+Status: Approved for Implementation
 Version: MVP-001
 
 ## MVP Direction
 
-The MVP topology is a single static web application deployed to an HTTPS-capable static host. The exact provider is not selected yet.
-
-Good-fit providers include Vercel, Netlify, and Cloudflare Pages because they support static web app deployment, preview environments, deploy history, and rollback.
+The MVP topology is a single Vite static web application deployed to Vercel.
 
 ## Requirements
 
 - Build artifact must be versioned for release validation.
 - Hosting target must support HTTPS.
-- Pull requests should produce preview deployments when the selected provider supports them.
+- Pull requests should produce Vercel preview deployments.
 - Release build must be smoke-tested after deployment.
-- Rollback procedure must restore the previous known-good static deploy and must be documented once hosting is selected.
+- Rollback procedure must restore the previous known-good Vercel deployment.
 
 ## Deferred Topology
 

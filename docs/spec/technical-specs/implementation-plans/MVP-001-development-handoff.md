@@ -1,6 +1,6 @@
 # MVP-001 Development Handoff
 
-Status: Ready for Implementation Planning
+Status: Approved for Implementation
 Version: MVP-001
 
 ## Goal
@@ -22,20 +22,20 @@ The stack decisions are recorded in [MVP Tech Radar](../../../research/technolog
 
 - Frontend: React + TypeScript + Vite.
 - Shared UI: `design-system-impl` internal design-system implementation library for every client.
+- Package manager: pnpm with a committed `pnpm-lock.yaml`.
+- Workspace: pnpm workspace with `apps/web` for the Vite React app and `packages/design-system-impl` for the internal UI package.
 - Persistence: IndexedDB through Dexie behind local services/repositories.
 - Testing: Vitest, Testing Library, Playwright, and axe-based accessibility checks.
-- Deployment: static hosting with HTTPS, previews, deploy history, and rollback.
+- Deployment: Vercel static hosting with HTTPS, previews, deploy history, and rollback.
 - Observability: no remote telemetry by default.
 
-## Remaining Development Decisions
+## Locked Development Defaults
 
-These decisions must be recorded during scaffold and implementation planning:
-
-- Package manager and package script names.
-- Exact workspace/package layout for `design-system-impl`.
-- Exact hosting provider and build artifact strategy.
-- CI commands for install, lint/typecheck, test, build, and release smoke validation.
-- Export/import file shape, validation, privacy warning, and replacement behavior.
+- Required package scripts: `dev`, `lint`, `typecheck`, `test`, `test:e2e`, `build`, `preview`, and `release:smoke`.
+- CI commands: `pnpm install --frozen-lockfile`, `pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm build`, and `pnpm test:e2e` where release validation requires end-to-end coverage.
+- Build artifact strategy: Vite production output deployed to Vercel.
+- Export/import shape: JSON with `schemaVersion`, `exportedAt`, and complete local dataset.
+- Import replacement behavior: validate full import before replacement, reject malformed or incompatible files without overwrite, show privacy warning, and require explicit confirmation.
 
 ## Required Implementation Workstreams
 
@@ -51,7 +51,7 @@ These decisions must be recorded during scaffold and implementation planning:
 
 Development may start after:
 
-- Sprint-001 spec package is approved for implementation planning.
+- Sprint-002 approves all active MVP docs for implementation.
 - Stack and persistence decisions are recorded.
 - Implementation tasks cite approved requirement and acceptance IDs.
 - QA confirms acceptance coverage for planned work.

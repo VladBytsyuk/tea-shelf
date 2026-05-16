@@ -1,6 +1,6 @@
 # Sprint-001: MVP Spec Sprint Plan
 
-Status: Closed - Ready for Implementation Planning
+Status: Closed - Superseded by Sprint-002 Implementation Approval
 Version: MVP-001
 
 ## Mode

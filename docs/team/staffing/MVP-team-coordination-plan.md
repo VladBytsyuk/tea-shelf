@@ -1,11 +1,11 @@
 # MVP Team Coordination Plan
 
-Status: Draft  
+Status: Approved for Implementation
 Version: MVP-001
 
 ## Operating Mode
 
-Use Spec-Driven Development. Implementation cannot begin until product, functional, UX, technical, QA, and risk specs are approved.
+Use Spec-Driven Development. Implementation can begin because active MVP product, functional, UX, technical, QA, security, DevOps, and risk specs are approved for implementation.
 
 ## Roles
 
@@ -17,7 +17,7 @@ Use Spec-Driven Development. Implementation cannot begin until product, function
 ## Architect
 
 - Owns technical strategy, system boundaries, entity model review, and future extensibility constraints.
-- Selects stack after spec approval.
+- Owns technical approval for the selected React + TypeScript + Vite, pnpm, Dexie, and Vercel direction.
 
 ## Designer
 
@@ -35,6 +35,12 @@ Use Spec-Driven Development. Implementation cannot begin until product, function
 ## DevOps
 
 - Owns environment, CI/CD, deployment, observability, and release process once implementation planning starts.
+
+## Sprint-002 Approval Model
+
+- Role owners approve their owned areas.
+- Product Manager consolidates sprint readiness and protects deferred scope.
+- Implementation tasks must cite approved docs, requirement IDs, and acceptance criteria.
 
 ## Handoff Format
 
