@@ -1,6 +1,6 @@
 # MVP Release Readiness
 
-Status: Draft  
+Status: Ready for Implementation Planning
 Version: MVP-001
 
 ## Required Before Implementation
@@ -23,8 +23,21 @@ Version: MVP-001
 - CI/check pipeline passes for the selected stack.
 - Release build smoke test passes.
 - Local persistence and backup/recovery expectations are validated.
+- Export/import or equivalent local backup exists unless PM explicitly accepts local data-loss risk.
+- Export/import privacy warning and malformed-import rejection are validated if export/import is implemented.
 - Deployment artifact and version are recorded.
 - Rollback trigger and owner are documented.
+
+## Release Evidence Record
+
+Release evidence must include:
+
+- Release version or build artifact identifier.
+- Environment or URL validated.
+- QA owner and signoff date.
+- DevOps owner and deployment/rollback notes when applicable.
+- Security reviewer or privacy-review note for export/import, telemetry, auth, sync, AI, or external data flows.
+- Known defects and accepted residual risks.
 
 ## Go / No-Go
 

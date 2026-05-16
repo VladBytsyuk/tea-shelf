@@ -1,8 +1,8 @@
 # PRD-MVP-001: Tea Shelf MVP
 
-Status: Draft  
-Version: MVP-001  
-Owner: Product Manager  
+Status: Ready for Implementation Planning
+Version: MVP-001
+Owner: Product Manager
 Audience: Product, design, architecture, engineering, QA, DevOps
 
 ## Product Brief
@@ -58,6 +58,7 @@ Users can catalog tea and teaware while conducting guided tea sessions.
 - FR-010: The system shall allow users to update remaining stock after a session or inventory edit.
 - FR-011: The system shall allow users to archive and restore tea, teaware, and saved session records.
 - FR-012: The system shall allow users to run a minimal custom session without selecting tea or teaware.
+- FR-013: The system shall provide export/import or an equivalent local backup path before release unless the Product Manager explicitly accepts local data-loss risk.
 
 ## Non-Functional Requirements
 
@@ -66,6 +67,7 @@ Users can catalog tea and teaware while conducting guided tea sessions.
 - NFR-003: Core interactions shall be accessible by keyboard.
 - NFR-004: Timer states shall be visually clear and not rely on color alone.
 - NFR-005: MVP documentation shall remain modular and traceable before implementation begins.
+- NFR-006: Local data durability limits shall be disclosed in release/user-facing guidance.
 
 ## Business Rules
 
@@ -77,7 +79,8 @@ Users can catalog tea and teaware while conducting guided tea sessions.
 - Stock updates after brewing are prompted and manual; MVP does not automatically deduct tea.
 - Records are archived/restored in MVP, not permanently deleted.
 - Saved sessions preserve the tea, teaware, and steep sequence values used during the session, even if source records are later edited or archived.
-- BrewRecipe is an internal conceptual/session-sequence model in MVP, not a first-class recipe-management feature.
+- BrewSequence is internal timer/session sequence data in MVP, not a first-class recipe-management feature.
+- Saved sessions may have zero notes; notes are optional user-entered private data.
 - Deferred modules must not be represented as MVP acceptance requirements.
 
 ## Success Criteria

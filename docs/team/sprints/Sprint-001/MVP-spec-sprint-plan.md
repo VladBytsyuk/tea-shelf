@@ -1,6 +1,6 @@
 # Sprint-001: MVP Spec Sprint Plan
 
-Status: Draft  
+Status: Closed - Ready for Implementation Planning
 Version: MVP-001
 
 ## Mode
@@ -32,11 +32,21 @@ Create a complete MVP spec ecosystem for Tea Shelf that can guide agent-driven i
 ## Agents Used
 
 - Product Manager
-- Architect
-- Designer
-- Engineer
-- QA
+- Project Manager
+- Business Analyst
+- System Analyst
+- Research Specialist
+- Risk Manager
+- Tech Lead
+- Backend Developer
+- Frontend Developer
+- Mobile Developer
 - DevOps
+- UI/UX Designer
+- QA Engineer
+- Security Specialist
+- Code Review Specialist
+- Documentation Specialist
 
 ## Key Decisions
 
@@ -45,14 +55,15 @@ Create a complete MVP spec ecosystem for Tea Shelf that can guide agent-driven i
 - AI, Knowledge Shelf, academy, monetization, social, marketplace, and native mobile are deferred.
 - Technical stack is selected after spec approval.
 - Repeat session is MVP Must.
-- Recipe favorites are deferred with standalone recipe management.
+- Recipe favorites and standalone recipe management are deferred.
+- Export/import or equivalent local backup is required before release unless PM explicitly accepts local data-loss risk.
 
 ## Verification
 
 - Requirement matrix maps MVP requirements to feature specs and acceptance coverage.
 - QA test plan covers core flows, responsive behavior, accessibility, and scope control.
 - Risk register captures major product and delivery risks.
-- Cross-role agent review completed and patches applied for product, architecture, UX, frontend, QA, and DevOps findings.
+- Cross-role agent review completed and patches applied for product, architecture, UX, frontend, backend, mobile, QA, security, DevOps, documentation, and project-management findings.
 
 ## Retrospective
 
@@ -60,4 +71,4 @@ Spec-first process reduces premature implementation risk. Main remaining risk is
 
 ## Next Step
 
-Cross-functional review and approval of the MVP spec package.
+Select stack, persistence, test tooling, hosting, and CI/CD commands; then start implementation planning from `docs/spec/technical-specs/implementation-plans/MVP-001-development-handoff.md`.

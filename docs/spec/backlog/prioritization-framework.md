@@ -22,6 +22,7 @@ Version: MVP-001
 - Repeat saved session.
 - Archive and restore records.
 - Minimal custom session.
+- Export/import or equivalent local backup before release unless PM explicitly accepts local data-loss risk.
 
 ## MVP Should-Haves
 
@@ -29,7 +30,6 @@ Version: MVP-001
 
 ## MVP Could-Haves
 
-- Import/export.
 - Advanced tasting notes.
 - Beginner guidance prompts.
 

@@ -1,7 +1,7 @@
 # MVP-001 Functional Specification
 
-Status: Draft  
-Version: MVP-001  
+Status: Ready for Implementation Planning
+Version: MVP-001
 Source PRD: PRD-MVP-001
 
 ## Scope
@@ -28,6 +28,7 @@ Business rules:
 - Required tea fields: name, type, original weight, remaining quantity.
 - Optional tea fields: brand, region, year, notes, favorite flag.
 - Archived teas are hidden from default lists but remain available as historical session snapshots.
+- Restored teas return to active lists and can be selected for new sessions if remaining quantity is valid.
 
 ## Module B: Teaware Shelf
 
@@ -48,6 +49,7 @@ Business rules:
 - Required teaware fields: name, category, material, volume.
 - Optional teaware fields: purpose, supported brewing methods, notes.
 - Archived teaware is hidden from default lists but remains available as historical session snapshots.
+- Restored teaware returns to active lists and can be selected for new sessions.
 
 ## Module C: Brew Timer
 
@@ -70,6 +72,10 @@ Business rules:
 - Timer state must be clear for setup, running, paused, steep complete, completed, canceled, and save failure states.
 - Browser refresh/background recovery is best effort in MVP and must be disclosed in UX copy if selected implementation cannot guarantee recovery.
 - Recipe favorites and standalone recipe management are deferred.
+- A valid steep sequence has at least one step and each step has a positive duration in seconds.
+- Temperature guidance is optional and may be recorded as a Celsius value or note according to the selected implementation.
+- Saving a session does not automatically decrement stock; after save, the user may manually update remaining quantity.
+- Custom saved sessions preserve sequence, timestamps, custom label, and notes without tea or teaware snapshots.
 
 ## Module D: Session History
 
@@ -84,6 +90,7 @@ Business rules:
 
 - Saved sessions preserve snapshots of tea, teaware, and steep sequence values.
 - Repeating a session creates a new session and does not overwrite history.
+- Restored sessions return to the default history list and remain repeatable.
 
 ## Cross-Module Requirements
 
@@ -92,6 +99,7 @@ Business rules:
 - Empty states for first use.
 - Filtered-empty and save-failure states for catalog and session flows.
 - Scope boundaries visible in docs and acceptance criteria.
+- Export/import or equivalent local backup path before release unless PM explicitly accepts local data-loss risk.
 
 ## Explicit Exclusions
 

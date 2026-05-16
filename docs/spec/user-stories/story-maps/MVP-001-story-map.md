@@ -19,7 +19,7 @@ Version: MVP-001
 | Must | As a teaware owner, I want to add teaware so I can choose suitable equipment. |
 | Must | As a practitioner, I want a multi-steep timer so I can conduct a ceremony accurately. |
 | Must | As a practitioner, I want to save a session so I can review or repeat it later. |
-| Should | As a user, I want to favorite teas and recipes so I can quickly find frequent choices. |
+| Should | As a user, I want to favorite teas so I can quickly find frequent choices. |
 | Should | As a user, I want to filter tea and teaware so I can choose faster. |
 | Could | As a beginner, I want gentle empty states so I know what to do first. |
 
@@ -30,3 +30,4 @@ Version: MVP-001
 - As a user, I want cloud sync.
 - As a user, I want native mobile notifications.
 - As a user, I want to buy tea from the app.
+- As a user, I want standalone recipe management and recipe favorites.

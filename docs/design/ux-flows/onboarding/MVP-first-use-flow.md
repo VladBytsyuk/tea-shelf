@@ -10,7 +10,7 @@ Guide a new user to first value without requiring education, registration, or se
 ## Flow
 
 1. User lands in the app.
-2. User sees primary navigation for Tea Shelf, Teaware Shelf, and Brew Timer.
+2. User sees primary navigation for Tea Shelf, Teaware Shelf, Brew Timer, and Session History.
 3. User adds first tea.
 4. User adds first teaware item.
 5. User starts first brew session.

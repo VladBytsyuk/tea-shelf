@@ -15,6 +15,8 @@ MVP data includes tea inventory, teaware inventory, brew recipes, session histor
 - If telemetry is introduced later, document event scope and avoid collecting sensitive notes by default.
 - Browser/local storage limits and data-loss risks must be disclosed.
 - Export/import or local backup behavior must avoid sending user data to external services by default.
+- Export/import UX must warn that exported files can contain private collection and session notes.
+- Import must reject malformed files without overwriting existing data.
 
 ## Deferred Security Areas
 

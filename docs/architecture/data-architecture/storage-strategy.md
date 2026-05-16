@@ -1,6 +1,6 @@
 # Storage Strategy
 
-Status: Draft  
+Status: Ready for Implementation Planning
 Version: MVP-001
 
 ## MVP Direction
@@ -15,6 +15,10 @@ Tea Shelf MVP is local-first and single-user until authentication and cloud sync
 - Prevent negative remaining quantity.
 - Version stored data so future migrations can be planned.
 - Provide a user-accessible export/import or equivalent local backup path before release, unless PM explicitly accepts local data-loss risk.
+- Exported files must include data version metadata.
+- Import must reject malformed or incompatible data without overwriting existing data.
+- Import must warn users that exported files can contain private tea, teaware, session, and note data.
+- Conflict handling may be simple for MVP: replace all local data only after explicit confirmation, or import into a separate review flow selected during implementation planning.
 
 ## Privacy Boundaries
 
@@ -27,3 +31,4 @@ Tea Shelf MVP is local-first and single-user until authentication and cloud sync
 - Browser storage clearing may remove local data unless export/import or another backup method is used.
 - Release docs must disclose local data durability limits.
 - QA must validate normal-use persistence and backup/recovery behavior once the implementation strategy is selected.
+- Storage unavailable, quota exceeded, or incompatible local data must surface a recoverable error instead of trapping users in a broken app state.

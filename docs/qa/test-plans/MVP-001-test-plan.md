@@ -1,6 +1,6 @@
 # MVP-001 Test Plan
 
-Status: Draft  
+Status: Ready for Implementation Planning
 Version: MVP-001
 
 ## Test Scope
@@ -26,6 +26,17 @@ Validate Tea Shelf, Teaware Shelf, Brew Timer, Session History, responsive layou
 | T-SH-001 | Must | AC-SH-001..005 | Session history lists, details, repeats, archives, and preserves snapshots. |
 | T-X-001 | Must | AC-X-001..004 | Cross-feature responsive, accessibility, traceability, and scope-control gates pass. |
 
+## Executable Case Requirements
+
+Each implementation test case must record:
+
+- Preconditions and test data.
+- Steps.
+- Expected result.
+- Related acceptance criteria.
+- Manual or automated ownership.
+- Blocking severity for failure.
+
 ## Data Edge Cases
 
 - Missing required fields.
@@ -36,6 +47,12 @@ Validate Tea Shelf, Teaware Shelf, Brew Timer, Session History, responsive layou
 - Save failure with unsaved form/session values.
 - Empty list and filtered-empty states.
 - Unavailable tea used for historical session detail.
+- Restore tea, teaware, and session records.
+- Save retry without losing entered values.
+- Timer sequence with no steps or non-positive duration.
+- Repeat session when source tea or teaware is archived.
+- Storage unavailable, quota exceeded, incompatible data, and malformed import.
+- Export/import privacy warning and replacement confirmation.
 
 ## Responsive Matrix
 
@@ -63,5 +80,6 @@ QA signoff requires:
 - Responsive screenshots or equivalent evidence.
 - Accessibility checklist result.
 - Data integrity test result.
+- Backup/export or explicit PM data-loss acceptance result.
 - Smoke test result for release build.
 - List of known defects and accepted residual risks.

@@ -1,55 +1,136 @@
-# MVP Component Requirements
+# MVP Component Specifications
 
-Status: Draft  
+Status: Ready for Implementation Planning
 Version: MVP-001
 
-## Atoms
+## Purpose
 
-- Button
-- Icon button
-- Text input
-- Number input
-- Select
-- Checkbox or toggle
-- Badge
-- Timer display
-- Progress indicator
+This document is the index and shared rule set for Tea Shelf MVP components. Each component has its own canonical specification file under this directory.
 
-## Molecules
+Components must use tokens from:
 
-- Tea form field group
-- Teaware form field group
-- Filter bar
-- Favorite control
-- Quantity control
-- Steep control
-- Session note input
+- `docs/design/design-system/color-system.md`
+- `docs/design/design-system/typography.md`
+- `docs/design/design-system/tokens/MVP-token-requirements.md`
 
-## Organisms
+## Global Component Rules
 
-- Tea list
-- Tea detail
-- Teaware list
-- Teaware detail
-- Brew timer panel
-- Session history list
-- Session repeat panel
+### Box Model
 
-## Requirements
+- All components use `box-sizing: border-box`.
+- Controls use fixed heights from size tokens unless explicitly defined otherwise.
+- Text wraps by default unless a component specifies truncation.
+- Layout-affecting state changes must preserve component width and height.
 
-- Components must be responsive.
-- Controls must have stable dimensions where layout shifts would harm timer or catalog usability.
-- Mobile controls must be easy to reach and read.
-- Component states must include empty, loading if applicable, error, disabled, active, complete, and unavailable states.
-- Form components must include validation, dirty, saving, saved, and save-failed states.
-- Archive and restore actions must support confirmation dialog states.
-- Timer controls must include setup, running, paused, steep complete, completed, canceled, and save-failed states.
-- Favorite controls must expose selected and unselected states with accessible names.
-- Lists must support empty, filtered-empty, active, archived, and unavailable item states.
+### Shared Dimensions
 
-## Variant Requirements
+| Use | Value |
+| --- | ---: |
+| Compact control height | 32px |
+| Default control height | 40px |
+| Large/mobile primary control height | 48px |
+| Minimum practical touch target | 44px by 44px |
+| Default icon size | 20px |
+| Metadata icon size | 16px |
+| Timer action icon size | 24px |
+| Default control radius | 6px |
+| Card/panel/dialog radius | 8px |
+| Badge/chip radius | 999px |
 
-- Buttons: primary, secondary, destructive, icon-only, disabled, loading.
-- Inputs: text, number, select, multi-select or method selector, notes textarea.
-- Badges: favorite, unavailable, archived, custom session.
-- Dialogs: archive confirmation, cancel session confirmation, save failure.
+### Shared Spacing
+
+| Relationship | Value |
+| --- | ---: |
+| Icon to label | 8px |
+| Label to field | 6px |
+| Field to helper/error text | 6px |
+| Inline metadata items | 8px |
+| Row internal gap | 12px |
+| Card internal gap | 12px |
+| Form group gap | 16px |
+| Section gap | 24px |
+| Dialog content gap | 16px |
+| Dialog action gap | 12px |
+
+### Shared Focus
+
+- Keyboard focus uses `2px solid focus.ring`.
+- Default focus offset is 2px.
+- Inset focus is allowed only when outline offset would be clipped.
+- Focus style must be visible on `bg.default`, `surface.default`, `surface.muted`, and `surface.selected`.
+
+### Shared Loading And Disabled Behavior
+
+- Loading controls keep their normal width and height.
+- Loading buttons show a spinner or progress mark before the label; label remains visible unless the button is icon-only.
+- Disabled controls use `state.opacity.disabled`, keep readable labels, and do not use hover styling.
+- Disabled controls that need explanation must be paired with helper text near the control.
+
+### Shared Icon Rules
+
+- Use familiar icons for favorite, edit, archive, restore, pause, resume, next, complete, and close actions.
+- Icon-only controls require accessible names.
+- Icons do not replace visible text for unfamiliar actions.
+- Icons inherit the component text color unless state-specific color is defined.
+
+## Component Files
+
+### Actions
+
+- [Button](actions/button.md)
+- [Icon Button](actions/icon-button.md)
+
+### Forms
+
+- [Field Group](forms/field-group.md)
+- [Text Input](forms/text-input.md)
+- [Number Input With Unit](forms/number-input-with-unit.md)
+- [Textarea](forms/textarea.md)
+- [Select](forms/select.md)
+- [Method Selector / Multi-Select Chips](forms/method-selector-multi-select-chips.md)
+- [Checkbox / Toggle](forms/checkbox-toggle.md)
+- [Validation Message](forms/validation-message.md)
+
+### Feedback And Empty States
+
+- [Inline Alert](feedback/inline-alert.md)
+- [Empty State](feedback/empty-state.md)
+- [Filtered Empty State](feedback/filtered-empty-state.md)
+
+### Data Display
+
+- [Badge](data-display/badge.md)
+- [Metadata Group](data-display/metadata-group.md)
+- [Divider](data-display/divider.md)
+
+### Product Components
+
+- [Tea List Row / Card](product/tea-list-row-card.md)
+- [Stock Indicator](product/stock-indicator.md)
+- [Favorite Control](product/favorite-control.md)
+- [Teaware List Row / Card](product/teaware-list-row-card.md)
+- [Brewing Method Chip](product/brewing-method-chip.md)
+
+### Timer Components
+
+- [Timer Display](timer/timer-display.md)
+- [Timer Controls](timer/timer-controls.md)
+- [Steep List](timer/steep-list.md)
+- [Sequence Editor](timer/sequence-editor.md)
+- [Progress Indicator](timer/progress-indicator.md)
+
+### Session Components
+
+- [Session History Row](session/session-history-row.md)
+- [Session Detail Snapshot](session/session-detail-snapshot.md)
+- [Repeat Session Panel](session/repeat-session-panel.md)
+
+### Navigation
+
+- [Primary Navigation](navigation/primary-navigation.md)
+
+### Dialogs And Overlays
+
+- [Confirmation Dialog](overlays/confirmation-dialog.md)
+- [Save Failed State](overlays/save-failed-state.md)
+- [Import Replacement Confirmation](overlays/import-replacement-confirmation.md)

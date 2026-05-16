@@ -1,0 +1,19 @@
+# Save Failed State
+
+Status: Ready for Implementation Planning
+Version: MVP-001
+
+## Purpose
+
+Recover from failed save.
+
+## Layout
+
+- Inline alert near the form or timer save action.
+- Retry action appears inside alert or directly after it.
+
+## Rules
+
+- Keep all entered values.
+- Do not create duplicate session history entries after retry.
+- Message explains that the save failed and what the user can do next.

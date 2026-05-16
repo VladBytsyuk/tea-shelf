@@ -1,6 +1,6 @@
 # MVP-001 Technical Requirements
 
-Status: Draft  
+Status: Ready for Implementation Planning
 Version: MVP-001
 
 ## Purpose
@@ -17,13 +17,15 @@ Define technical requirements without selecting the implementation stack. This d
 
 - Store tea records.
 - Store teaware records.
-- Store brew recipes or session sequences.
+- Store brew sequences or session sequences without standalone recipe-management UI.
 - Store saved brew sessions.
 - Preserve saved session context even if source records are later edited.
 - Store lifecycle status for active and archived records.
 - Store timestamps and IDs for traceability.
 - Support data versioning for future local migrations.
 - Support export/import or equivalent local backup expectations before release unless PM accepts data-loss risk.
+- Reject malformed imports without overwriting existing data.
+- Warn users that exported files may contain private collection and session notes.
 
 ## Reliability Requirements
 
@@ -32,6 +34,7 @@ Define technical requirements without selecting the implementation stack. This d
 - Remaining quantity updates must be validated.
 - Save failures must preserve unsaved user-entered values.
 - Timer must support setup, running, paused, steep complete, completed, canceled, and save-failed states.
+- Timer must not promise guaranteed background, lock-screen, or push-notification behavior in MVP.
 
 ## Security and Privacy Requirements
 

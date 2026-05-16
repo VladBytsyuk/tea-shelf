@@ -1,6 +1,6 @@
 # MVP System Behavior
 
-Status: Draft  
+Status: Ready for Implementation Planning
 Version: MVP-001
 
 ## Boundary
@@ -34,13 +34,43 @@ The MVP behaves as a single-user responsive web application focused on local pro
 - Canceled: user confirms discarding unsaved session progress.
 - Save failed: app reports failure and allows retry without losing session details.
 
+## Timer Transition Rules
+
+| From | Trigger | To | Guard / Result |
+| --- | --- | --- | --- |
+| Setup | Start | Running | Sequence has at least one step and each duration is positive. |
+| Setup | Cancel | Canceled | User confirms discard if setup has unsaved values. |
+| Running | Pause | Paused | Remaining time stops changing until resume. |
+| Running | Current steep reaches zero | Steep complete | User chooses next steep or complete session; MVP does not require auto-advance. |
+| Running | Cancel | Canceled | User confirms discard of unsaved progress. |
+| Paused | Resume | Running | Countdown resumes from remaining time. |
+| Paused | Cancel | Canceled | User confirms discard of unsaved progress. |
+| Steep complete | Next steep | Running | Next ordered step becomes active. |
+| Steep complete | Complete session | Completed | User can enter notes and save. |
+| Completed | Save succeeds | Session history entry | Snapshots are written at save time. |
+| Completed | Save fails | Save failed | Session values and notes remain available for retry. |
+| Save failed | Retry succeeds | Session history entry | No duplicate history entry is created for the failed attempt. |
+| Save failed | Cancel | Canceled | User confirms discard of unsaved completed session. |
+
+Terminal states are Canceled and saved Session history entry. Browser refresh, tab backgrounding, sleep/wake, and lock-screen behavior are best effort in MVP and must not be described as guaranteed background timing.
+
 ## Data Lifecycle
 
 - Create records as active.
 - Archive records instead of permanent deletion in MVP.
 - Restore archived records when the user chooses restore.
 - Preserve snapshots inside sessions at save time.
+- If source tea or teaware records change during an active unsaved session, the saved session uses the selected values visible in setup/session context at save time.
+- Repeating a saved session uses saved snapshots and does not require restoring archived source records.
+- Saving a session does not automatically decrement tea stock; manual stock update happens after save and must validate non-negative remaining quantity.
 - Require explicit future approval before adding permanent deletion.
+
+## Local Persistence and Backup Expectations
+
+- Normal-use data must persist after reload once the implementation stack is selected.
+- Stored data must include version metadata to support future migrations.
+- Export/import or an equivalent local backup path is required before release unless PM explicitly accepts local data-loss risk.
+- Import failures, storage unavailable, quota exceeded, and incompatible local data must not lock the user out of the application.
 
 ## Integration Expectations
 

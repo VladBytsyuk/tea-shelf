@@ -22,5 +22,7 @@ Validate that a release build satisfies MVP readiness gates before user-facing r
 ## Escalation
 
 - Critical user-flow failure: stop release.
+- Missing export/import or missing PM data-loss acceptance: stop release.
+- Export/import sends data externally by default: stop release.
 - Data-loss behavior: stop release unless explicitly accepted by PM.
 - Privacy boundary violation: stop release pending security review.

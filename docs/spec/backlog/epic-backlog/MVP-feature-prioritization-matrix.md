@@ -15,7 +15,7 @@ Version: MVP-001
 | Repeat session | Must | Required for MVP session-history value |
 | Recipe favorite | Won't | Deferred with standalone recipe management |
 | Compatibility metadata | Should | Supports teaware choice without AI |
-| Import/export | Could | Useful but not required for MVP |
+| Export/import or equivalent local backup | Must | Required before release unless PM explicitly accepts local data-loss risk |
 | Advanced tasting notes | Could | Valuable later, not core release blocker |
 | Beginner prompts | Could | Helpful but must not become academy content |
 | AI assistant | Won't | Deferred to Phase 4 |

@@ -1,6 +1,6 @@
 # MVP Core Entity Definitions
 
-Status: Draft  
+Status: Ready for Implementation Planning
 Version: MVP-001
 
 ## Tea
@@ -59,9 +59,9 @@ Rules:
 - Required fields are ID, name, category, material, volume, lifecycle status, created timestamp, and updated timestamp.
 - Marketplace and purchase metadata are excluded.
 
-## BrewRecipe
+## BrewSequence
 
-Represents a reusable brewing sequence.
+Represents a brewing sequence used by timer setup or saved session history.
 
 Fields:
 
@@ -72,15 +72,15 @@ Fields:
 - Tea weight
 - Water volume
 - Ordered brew steps
-- Favorite flag
 - Created timestamp
 - Updated timestamp
 
 Rules:
 
-- BrewRecipe is a conceptual/session-sequence model for MVP.
+- BrewSequence is a conceptual/session-sequence model for MVP.
 - Standalone recipe management and recipe favorites are deferred.
 - Recipes or sequences may be repeated through saved sessions.
+- MVP may store sequences embedded in sessions instead of as separately managed records.
 - AI optimization fields are excluded.
 
 ## BrewStep
@@ -110,7 +110,7 @@ Fields:
 - ID
 - Tea used
 - Optional teaware used
-- Recipe used or custom sequence
+- Sequence used or custom sequence
 - Started timestamp
 - Completed timestamp
 - Steeps completed
@@ -130,7 +130,7 @@ Rules:
 
 ## SessionNote
 
-Represents user reflection on a session.
+Represents optional user reflection on a session.
 
 Fields:
 
@@ -144,6 +144,7 @@ Rules:
 
 - MVP supports zero or more notes per session.
 - Notes are private user data.
+- Implementations may store notes inline on BrewSession unless separate note records reduce complexity.
 
 ## Deferred Entity Areas
 

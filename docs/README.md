@@ -17,10 +17,18 @@ Primary entry points:
 - [Core Entity Definitions](spec/system-specs/domain-models/MVP-core-entities.md)
 - [MVP Information Architecture](spec/system-specs/domain-models/MVP-information-architecture.md)
 - [Acceptance Criteria](spec/user-stories/acceptance-criteria/MVP-001-acceptance-criteria.md)
+- [Requirement Matrix](spec/requirements-traceability/requirement-matrix.md)
+- [Development Handoff](spec/technical-specs/implementation-plans/MVP-001-development-handoff.md)
+- [MVP Screen Specifications](design/wireframes/MVP-screen-specifications.md)
+- [MVP Design System](design/design-system/MVP-design-system.md)
+- [Local Service Contracts](api/contracts/service-contracts/MVP-local-service-contracts.md)
 - [MVP Test Plan](qa/test-plans/MVP-001-test-plan.md)
+- [Local Data Privacy](security/data-protection/MVP-local-data-privacy.md)
+- [Local Data Recovery](operations/backup-recovery/MVP-local-data-recovery.md)
 - [Risk Register](team/risks/MVP-risk-register.md)
 - [Spec Approval Workflow](team/governance/spec-approval-workflow.md)
 - [Release Readiness](operations/release-management/MVP-release-readiness.md)
+- [Sprint-001 Report](team/sprints/Sprint-001/MVP-spec-sprint-report.md)
 
 ## Documentation Structure
 

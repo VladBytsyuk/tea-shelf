@@ -22,6 +22,18 @@ This document will map approved specifications to implementation areas after the
 
 No code areas are mapped yet because implementation has not started and the stack has not been selected.
 
+## Planned Implementation Areas
+
+| Spec Area | Planned Code Area |
+| --- | --- |
+| Tea Shelf | Tea feature module, tea domain model, tea local service/repository, tea UI screens |
+| Teaware Shelf | Teaware feature module, teaware domain model, teaware local service/repository, teaware UI screens |
+| Brew Timer | Timer/session feature module, timer state machine, sequence validation, stock prompt UI |
+| Session History | History feature module, session snapshots, repeat-session setup, archive/restore UI |
+| Local persistence | Storage adapter, data versioning, import/export, corruption/quota error handling |
+| Cross-cutting UX | Navigation, responsive layout, dialogs, form validation, accessibility utilities |
+| QA | Acceptance tests, regression tests, responsive checks, accessibility checks, smoke checks |
+
 ## Rule
 
 Future implementation tasks must update this map when code areas are created.

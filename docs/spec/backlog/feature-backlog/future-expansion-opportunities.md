@@ -32,7 +32,6 @@ Version: MVP-001
 - Aging inventory.
 - Advanced tasting notes.
 - Collection analytics.
-- Import/export.
 - Session comparison.
 
 ## Commercial Expansion

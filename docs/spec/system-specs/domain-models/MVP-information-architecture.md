@@ -53,7 +53,7 @@ Views:
 Primary objects:
 
 - BrewSession.
-- BrewRecipe.
+- BrewSequence.
 - BrewStep.
 - SessionNote.
 
