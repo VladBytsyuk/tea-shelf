@@ -1,2 +1,4 @@
 # Obsidian workspace/config folders at any project depth.
 **/.obsidian/
+**/.obsidian/**
+**/.obsidian/**/*
