@@ -10,8 +10,9 @@ This document maps approved MVP specifications to the planned implementation are
 ## Workspace Defaults
 
 - Package manager: pnpm with committed `pnpm-lock.yaml`.
-- Web app: `apps/web`.
-- Shared UI package: `packages/design-system-impl`.
+- Workspace root: `projects/`.
+- Web app: `projects/web`.
+- Shared UI package: `projects/design-system-impl`.
 - Hosting: Vercel static deployment of the Vite production build.
 
 ## MVP Spec Sources
@@ -27,18 +28,18 @@ This document maps approved MVP specifications to the planned implementation are
 
 ## Implementation Mapping Status
 
-No code areas exist yet because implementation has not started. New implementation tasks must update this map when concrete source paths are created.
+Sprint-003 created the empty runnable scaffold under `projects/`. Feature modules, domain services, persistence, real UI, and release smoke coverage have not started yet. New implementation tasks must update this map when concrete feature source paths are created.
 
 ## Planned Implementation Areas
 
 | Spec Area | Planned Code Area |
 | --- | --- |
-| Tea Shelf | `apps/web` tea feature module, tea domain model, tea local service/repository, tea UI screens |
-| Teaware Shelf | `apps/web` teaware feature module, teaware domain model, teaware local service/repository, teaware UI screens |
-| Brew Timer | `apps/web` timer/session feature module, timer state machine, sequence validation, stock prompt UI |
-| Session History | `apps/web` history feature module, session snapshots, repeat-session setup, archive/restore UI |
-| Local persistence | `apps/web` storage adapter, Dexie schema versioning, import/export, corruption/quota error handling |
-| Shared design system | `packages/design-system-impl` tokens, primitives, dialogs, forms, navigation, timer controls |
+| Tea Shelf | `projects/web` tea feature module, tea domain model, tea local service/repository, tea UI screens |
+| Teaware Shelf | `projects/web` teaware feature module, teaware domain model, teaware local service/repository, teaware UI screens |
+| Brew Timer | `projects/web` timer/session feature module, timer state machine, sequence validation, stock prompt UI |
+| Session History | `projects/web` history feature module, session snapshots, repeat-session setup, archive/restore UI |
+| Local persistence | `projects/web` storage adapter, Dexie schema versioning, import/export, corruption/quota error handling |
+| Shared design system | `projects/design-system-impl` tokens, primitives, dialogs, forms, navigation, timer controls |
 | QA | Unit, component, Playwright smoke, responsive, accessibility, and backup/recovery checks |
 
 ## Rule

@@ -65,3 +65,27 @@ Goal: Remove Draft and planning-only status from active MVP development specs so
 - Hosting provider locked to Vercel.
 - Export/import minimum file shape and replacement behavior recorded.
 - Deferred and future docs remain non-MVP implementation scope.
+
+## Sprint-003: MVP Scaffold Sprint
+
+Goal: Create empty runnable MVP projects with run instructions, tests, and CI checks.
+
+## Sprint-003 Role Review Evidence
+
+| Role Owner | Review Focus | Outcome |
+| --- | --- | --- |
+| Product Manager | Scope, MVP boundary, sprint closure | Mini Sprint used; `/projects/` root accepted as Sprint-003 scaffold location. |
+| Tech Lead | Architecture boundary and workspace fit | Approved scaffold: `projects/web` plus `projects/design-system-impl`; no backend, auth, sync, native mobile, telemetry, or commerce scope added. |
+| QA Engineer | Scaffold acceptance and test coverage | Accepted scaffold validation; each created project has tests and root checks passed. |
+| DevOps | CI and run-check coverage | Approved CI baseline: frozen install, lint, typecheck, test, and build. |
+| Documentation Specialist | Sprint artifacts and traceability | Required Sprint-003 report, handoff, retrospective, and path traceability updates. |
+
+## Sprint-003 Closure Evidence
+
+- Root `projects/` workspace created.
+- `projects/web` created as an empty runnable React + Vite app scaffold.
+- `projects/design-system-impl` created as an empty runnable shared library scaffold.
+- Root run/check instructions added.
+- GitHub Actions CI added for install, lint, typecheck, test, and build.
+- Local verification passed with `corepack pnpm install --frozen-lockfile`, `corepack pnpm lint`, `corepack pnpm typecheck`, `corepack pnpm test`, and `corepack pnpm build`.
+- Scaffold does not complete any MVP feature acceptance criteria.

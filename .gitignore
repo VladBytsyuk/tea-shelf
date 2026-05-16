@@ -2,3 +2,16 @@
 **/.obsidian/
 **/.obsidian/**
 **/.obsidian/**/*
+
+# Node/pnpm workspace artifacts.
+node_modules/
+**/node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+
+# Local environment files.
+.env
+.env.*
+!.env.example
