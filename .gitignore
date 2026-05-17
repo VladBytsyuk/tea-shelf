@@ -8,6 +8,8 @@ node_modules/
 **/node_modules/
 dist/
 coverage/
+storybook-static/
+**/storybook-static/
 playwright-report/
 test-results/
 

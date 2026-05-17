@@ -6,5 +6,5 @@
     "outDir": "dist",
     "noEmit": false
   },
-  "include": ["src/index.tsx"]
+  "include": ["src/index.tsx", "src/components/**/*.tsx", "src/tokens/**/*.ts", "src/vite-env.d.ts"]
 }

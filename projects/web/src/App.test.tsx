@@ -6,7 +6,8 @@ describe("web scaffold", () => {
   it("renders the empty app shell", () => {
     render(<App />);
 
-    expect(screen.getByRole("heading", { name: "Tea Shelf" })).toBeInTheDocument();
-    expect(screen.getByText("MVP web scaffold is running.")).toBeInTheDocument();
+    expect(screen.getByRole("navigation", { name: "Primary navigation" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Shared design system" })).toBeInTheDocument();
+    expect(screen.getByText("MVP web scaffold is running with shared design-system components.")).toBeInTheDocument();
   });
 });
