@@ -89,3 +89,47 @@ Goal: Create empty runnable MVP projects with run instructions, tests, and CI ch
 - GitHub Actions CI added for install, lint, typecheck, test, and build.
 - Local verification passed with `corepack pnpm install --frozen-lockfile`, `corepack pnpm lint`, `corepack pnpm typecheck`, `corepack pnpm test`, and `corepack pnpm build`.
 - Scaffold does not complete any MVP feature acceptance criteria.
+
+## Sprint-004: Design System Implementation Sprint
+
+Goal: Implement `design-system-impl` as the MVP design-system library and add Storybook so components can be viewed and reviewed.
+
+## Sprint-004 Role Review Evidence
+
+| Role Owner | Review Focus | Outcome |
+| --- | --- | --- |
+| Product Manager | Scope, MVP boundary, sprint closure | Mini Sprint used; design-system implementation kept separate from feature screens. |
+| Frontend Developer | Component implementation and Storybook stories | Shared MVP component families implemented as presentational React components. |
+| QA Engineer | Component verification and reviewability | Lint, typecheck, test, build, and Storybook build gates passed. |
+| Security Specialist | Dev dependency and local tooling exposure | Storybook kept dev-only; production app bundles avoid Storybook exposure. |
+
+## Sprint-004 Closure Evidence
+
+- `design-system-impl` exports semantic tokens, CSS, and MVP component families.
+- Storybook config and review stories were added.
+- Web scaffold consumes real design-system components.
+- Workspace lint, typecheck, test, build, Storybook build, and production audit passed.
+- Feature screens, persistence, routing, and browser visual review remain future work.
+
+## Sprint-005: MVP Layout Specification Sprint
+
+Goal: Have the full user flow for the MVP and unambiguous annotated layouts for every screen.
+
+## Sprint-005 Role Review Evidence
+
+| Role Owner | Review Focus | Outcome |
+| --- | --- | --- |
+| Product Manager | Sprint scope, user flow, MVP boundary | Mini Sprint used; output limited to documentation-only layout specifications. |
+| Business Analyst | Requirement and acceptance coverage | Layout sections cite MVP acceptance criteria across Tea Shelf, Teaware Shelf, Brew Timer, Session History, and cross-feature requirements. |
+| System Analyst | Entity lifecycle and state consistency | Archive/restore, custom session, repeat setup, snapshot preservation, and save-failed paths documented. |
+| UI/UX Designer | Layout structure and responsive behavior | Annotated layouts define screen regions, controls, states, and 360px/768px/1024px behavior. |
+| QA Engineer | Future validation readiness | Required state coverage and responsive acceptance checklist documented. |
+| Documentation Specialist | Artifact consistency and traceability | Sprint plan, report, handoffs, retrospective, and layout version `LAYOUT-001` recorded. |
+
+## Sprint-005 Closure Evidence
+
+- `docs/design/wireframes/MVP-screen-specifications.md` now indexes `LAYOUT-001` and links to separate screen layout files under `docs/design/wireframes/screens/`.
+- Full MVP happy path documented from tea creation through repeated saved session.
+- Required screens and states documented for Tea Shelf, Teaware Shelf, Brew Timer, Session History, Data Backup, archive views, forms, confirmations, save failures, stock prompt, repeat setup, export, import validation, and import replacement.
+- Responsive behavior is specified for 360px, 768px, and 1024px widths.
+- No React implementation, routing, persistence, visual mockup images, or feature tests were added in Sprint-005.

@@ -2,57 +2,91 @@
 
 Status: Approved for Implementation
 Version: MVP-001
+Layout Version: LAYOUT-001
 
 ## Purpose
 
-Define minimum implementation-ready screen expectations for MVP responsive web builds. These are behavior specifications, not visual mockups.
+Index the implementation-ready annotated layout documents for the MVP responsive web app. Each screen or state has its own canonical layout file under `docs/design/wireframes/screens/`.
 
-## Navigation
+## Global Layout Rules
 
-- Primary navigation includes Tea Shelf, Teaware Shelf, Brew Timer, and Session History.
-- Mobile uses a compact navigation pattern selected during implementation, but all primary destinations must remain reachable without horizontal scrolling.
-- Long tea names, bilingual branding, and validation text must wrap without overlapping controls at 360px width and above.
+- Primary navigation includes Tea Shelf, Teaware Shelf, Brew Timer, and Session History only.
+- Mobile uses one content column below persistent primary navigation. All primary destinations remain reachable at 360px width without horizontal scrolling.
+- Tablet and desktop may use two-column list/detail layouts where specified, but every action must remain available in a single-column fallback.
+- Page headers contain the screen title, one primary action when applicable, and compact supporting metadata or view switches.
+- Lists use shared row/card patterns, with status badges and metadata wrapping below long names when needed.
+- Forms use stacked fields on mobile. Tablet and desktop may group related fields into two columns only when labels, errors, and helper text remain readable.
+- All destructive archive/cancel actions require confirmation dialogs.
+- Save-failed states keep user-entered values visible and provide retry plus cancel/back options.
+- Long tea names, bilingual branding, metadata, and validation text wrap without overlapping controls at 360px, 768px, and 1024px widths.
+- Required shared components come from `design-system-impl`; feature screens may add page layout but must not duplicate shared button, field, navigation, timer, empty-state, or dialog behavior.
 
-## Tea Shelf Screens
+## End-To-End MVP Flow
 
-- List: active teas, search/filter controls, favorite and availability indicators, create action, archived-view entry.
-- Empty state: direct create-tea action; no education, AI, or marketplace prompts.
-- Filtered empty state: clear filters action and explanation that filters hide all active teas.
-- Detail: tea fields, stock, favorite state, notes, edit action, archive action.
-- Form: required fields, optional fields, validation errors, save/cancel, save-failed retry with values preserved.
-- Archived view: archived teas, restore action, historical context warning when relevant.
+1. User opens Tea Shelf.
+2. User creates a tea from the empty or list state.
+3. User opens Teaware Shelf.
+4. User creates a teaware item from the empty or list state.
+5. User opens Brew Timer, selects the tea, optionally selects teaware, edits the steep sequence, and starts the timer.
+6. User pauses/resumes if needed, advances through steeps, completes the session, enters optional notes, and saves.
+7. If a tea was selected, user sees the manual stock update prompt.
+8. User opens Session History, views the saved session, and repeats it into a new timer setup.
 
-## Teaware Shelf Screens
+## Screen Layout Files
 
-- List: active teaware, category/material/method filters, create action, archived-view entry.
-- Empty state: direct create-teaware action.
-- Filtered empty state: clear filters action.
-- Detail: category, material, volume, purpose, methods, notes, edit/archive actions.
-- Form: required fields, validation errors, save/cancel, save-failed retry with values preserved.
-- Archived view: restore action and note that archived items are unavailable for new sessions by default.
+### Navigation
 
-## Brew Timer Screens
+- [Primary Navigation](screens/navigation/primary-navigation.md)
 
-- Setup: choose tea or custom session, optional teaware, sequence steps, start/cancel actions.
-- Sequence validation: start is blocked when no steps exist or any duration is non-positive.
-- Active timer: current steep, remaining time, sequence progress, pause/resume/cancel controls, non-color state label.
-- Steep complete: next-steep and complete-session actions; MVP does not require auto-advance.
-- Completed: session notes, save action, cancel action, and stock-update prompt after successful save when tea is selected.
-- Save failed: error state with retry; sequence, selected tea/teaware, and notes remain visible.
-- Recovery copy: do not imply guaranteed background, lock-screen, push, or native notification behavior.
+### Tea Shelf
 
-## Session History Screens
+- [Tea List](screens/tea-shelf/tea-list.md)
+- [Tea Empty State](screens/tea-shelf/tea-empty-state.md)
+- [Tea Filtered Empty State](screens/tea-shelf/tea-filtered-empty-state.md)
+- [Tea Detail](screens/tea-shelf/tea-detail.md)
+- [Tea Form](screens/tea-shelf/tea-form.md)
+- [Archived Teas](screens/tea-shelf/archived-teas.md)
 
-- List: saved active sessions in reverse chronological order, archive action, repeat action, archived-view entry.
-- Empty state: direct action to start a session.
-- Detail: tea snapshot or custom label, optional teaware snapshot, sequence snapshot, timestamps, notes, repeat/archive actions.
-- Archived view: archived sessions with restore action.
-- Repeat setup: starts from saved snapshots and does not mutate the original session.
+### Teaware Shelf
 
-## Accessibility And Responsive Requirements
+- [Teaware List](screens/teaware-shelf/teaware-list.md)
+- [Teaware Empty State](screens/teaware-shelf/teaware-empty-state.md)
+- [Teaware Filtered Empty State](screens/teaware-shelf/teaware-filtered-empty-state.md)
+- [Teaware Detail](screens/teaware-shelf/teaware-detail.md)
+- [Teaware Form](screens/teaware-shelf/teaware-form.md)
+- [Archived Teaware](screens/teaware-shelf/archived-teaware.md)
 
-- Every icon-only action must have an accessible name.
-- Dialogs for cancel/archive/restore/import replacement must trap focus and restore focus on close.
-- Timer state changes must be perceivable through text; live announcements should be limited to start, pause, resume, steep complete, completed, and save failed.
-- Touch targets should be at least 44 by 44 CSS pixels where practical.
-- Core screens must be checked at 360px, 768px, and 1024px widths.
+### Brew Timer
+
+- [Timer Setup](screens/brew-timer/timer-setup.md)
+- [Active Timer](screens/brew-timer/active-timer.md)
+- [Steep Complete](screens/brew-timer/steep-complete.md)
+- [Completed Session](screens/brew-timer/completed-session.md)
+- [Stock Update Prompt](screens/brew-timer/stock-update-prompt.md)
+- [Timer Save Failed](screens/brew-timer/timer-save-failed.md)
+
+### Session History
+
+- [Session History List](screens/session-history/session-history-list.md)
+- [Session History Empty State](screens/session-history/session-history-empty-state.md)
+- [Session Detail](screens/session-history/session-detail.md)
+- [Repeat Session Setup](screens/session-history/repeat-session-setup.md)
+- [Archived Sessions](screens/session-history/archived-sessions.md)
+
+### Data Backup
+
+- [Data Backup](screens/data-backup/data-backup.md)
+- [Import Replacement Confirmation](screens/data-backup/import-replacement-confirmation.md)
+
+### Dialogs
+
+- [Archive Confirmation](screens/dialogs/archive-confirmation.md)
+- [Restore Confirmation](screens/dialogs/restore-confirmation.md)
+- [Cancel Active Session Confirmation](screens/dialogs/cancel-active-session-confirmation.md)
+
+## Responsive Acceptance Checklist
+
+- 360px: all pages are single-column; no horizontal scrolling; primary actions remain visible near page context; timer controls are reachable.
+- 768px: toolbars may compress into rows; forms may use limited two-column groups only when labels and errors remain readable.
+- 1024px: list/detail or two-column layouts are allowed; no primary action is hidden in hover-only controls.
+- Across all widths: icon-only actions have accessible names; dialogs trap focus; timer states use text; field errors remain adjacent to fields; long names and validation copy wrap.
