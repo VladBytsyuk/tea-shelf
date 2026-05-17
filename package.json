@@ -8,7 +8,10 @@
     "dev": "corepack pnpm --filter web dev",
     "build": "corepack pnpm -r build",
     "lint": "corepack pnpm -r lint",
+    "preview": "corepack pnpm --filter web preview",
+    "release:smoke": "corepack pnpm --filter web release:smoke",
     "test": "corepack pnpm -r test",
+    "test:e2e": "corepack pnpm --filter web test:e2e",
     "typecheck": "corepack pnpm -r typecheck"
   },
   "devDependencies": {

@@ -7,20 +7,24 @@
     "dev": "vite --host 127.0.0.1",
     "build": "tsc -p tsconfig.json && vite build",
     "lint": "eslint .",
+    "preview": "vite preview --host 127.0.0.1",
+    "release:smoke": "corepack pnpm build",
     "test": "vitest run",
+    "test:e2e": "vitest run src/App.test.tsx",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "design-system-impl": "workspace:*",
+    "dexie": "^4.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^6.0.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^6.0.2",
     "jsdom": "^25.0.1",
     "vite": "^8.0.13",
     "vitest": "^4.1.6"
