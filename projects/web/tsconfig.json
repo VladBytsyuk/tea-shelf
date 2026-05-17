@@ -1,6 +1,12 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "design-system-impl": ["../design-system-impl/src/index.tsx"],
+      "design-system-impl/tokens": ["../design-system-impl/src/tokens/index.ts"],
+      "design-system-impl/styles.css": ["../design-system-impl/src/styles.css"]
+    },
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
   "include": ["src", "vite.config.ts"]
